@@ -30,18 +30,66 @@ var assert = require("assert")
 // Output numArray: []
 // Explanation: Empty array...
 
-const altNumbers = (numArray) => {
-    // TODO: COMPLETE THIS FUNCTION
-    return [];
+//Helper Function for altNumbers()
+//It adds the numbers from the firstArray so long as it is not empty
+//and then the secondArray, so long as it is not empty
+//If I had more time I would've added more safety checks.
+// I'm new to js so I'm not sure if the syntax/style is correct.
+const createOutPutArray = (firstArray,secondArray,inputArrayLength) => {
+
+    let elementsAdded = 0;
+    let outPutArray = []
+    while (elementsAdded < inputArrayLength) {
+        if (firstArray.length > 0) {
+            outPutArray.push(firstArray.shift());
+            elementsAdded ++;
+        }
+        if (secondArray.length > 0) {
+            outPutArray.push(secondArray.shift());
+            elementsAdded ++;
+        }
+    }
+
+    return outPutArray;
 }
+
+const altNumbers = (numArray) => {
+    if (!numArray.length || !Array.isArray(numArray)) {
+        return [];
+    }
+    // Create two arrays to store positive and negative numbers.
+    negativeArray = [];
+    positiveArray = [];
+    
+    //Create a for loop to sort input numbers into their arrays
+    for(let i = 0; i < numArray.length; i++) {
+        if (numArray[i] >= 0) {
+            positiveArray.push(numArray[i]);
+        } else {
+            negativeArray.push(numArray[i]);
+        }
+    }
+    // If the positive.array.length >= negative.array.length
+    // then we insert the positive numbers first and then the negative numbers
+    //Otherwsie we do it in the other order.
+
+    //Our helper function will put the numbers in the right order
+    if (positiveArray.length >= negativeArray.length){
+        return createOutPutArray(positiveArray,negativeArray,numArray.length);
+    } else {
+        return createOutPutArray(negativeArray,positiveArray,numArray.length);
+    }
+}
+
+
 
 module.exports = { altNumbers } // Do not modify this line
 
-// ====================TESTS====================
-// Some tests to help you check your progress. Simply run your code with
-// node easy.js
-// If successful, no output should appear. If unsuccessful, you should see 
-// assertion errors being thrown.
+// // ====================TESTS====================
+// // Some tests to help you check your progress. Simply run your code with
+// // node easy.js
+// // If successful, no output should appear. If unsuccessful, you should see 
+// // assertion errors being thrown.
 
 let array1 = [1, -3, -8, -5, 10]
 array1 = altNumbers(array1)
