@@ -9,3 +9,6 @@ Application form: https://docs.google.com/forms/d/e/1FAIpQLSc0RFu0mFL_BIoOhdi3yr
 4. Provide link to repo in application
 
 Good luck!
+
+
+Note to assessors from applicant : Only had time to do the easy challenge at the moment so hard.py is untouched.
