@@ -1,3 +1,6 @@
+Note to assessors from applicant : Only had time to do the easy challenge at the moment so hard.py is untouched.
+
+
 # projects-2022-technical-screening
 Easy and Hard technical screening for 2022 projects applications
 
@@ -11,4 +14,3 @@ Application form: https://docs.google.com/forms/d/e/1FAIpQLSc0RFu0mFL_BIoOhdi3yr
 Good luck!
 
 
-Note to assessors from applicant : Only had time to do the easy challenge at the moment so hard.py is untouched.
